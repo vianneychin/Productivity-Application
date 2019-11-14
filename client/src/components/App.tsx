@@ -1,9 +1,10 @@
 import React from 'react'
 import { AuthButton } from '../styles/buttons'
+import { Dashboard } from './dashboard'
 
 export const App = () => (
   <div>
-    <h1>Hey dude</h1>
+    <Dashboard />
     <AuthButton />
   </div>
 )

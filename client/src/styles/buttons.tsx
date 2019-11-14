@@ -58,10 +58,3 @@ export const Auth = (props: any) => (
     Login with Google
   </StyledButton>
 )
-
-// Create landing dashboard:
-// Landing dashboard should contain login with:
-// • Google
-// • LinkedIn
-// • GitHub
-// • Manual Login Modal
