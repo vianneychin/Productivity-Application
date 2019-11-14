@@ -1,5 +1,12 @@
 import React, { Fragment } from 'react'
 import { render } from 'react-dom'
 import { App } from './components/App'
+import { GlobalStyles } from './styles/GlobalStyles'
 
-render(<App />, document.getElementById('root'))
+render(
+  <Fragment>
+    <GlobalStyles />
+    <App />
+  </Fragment>,
+  document.getElementById('root')
+)
