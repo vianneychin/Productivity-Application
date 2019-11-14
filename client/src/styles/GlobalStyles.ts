@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     font-size: 14px;
+    font-weight: normal;
     text-decoration: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: auto;
