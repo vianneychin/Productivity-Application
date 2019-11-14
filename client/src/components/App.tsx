@@ -1,10 +1,14 @@
 import React from 'react'
-import { AuthButton } from '../styles/buttons'
-import { Dashboard } from './dashboard'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { StyledLanding } from './landing'
 
 export const App = () => (
-  <div>
-    <Dashboard />
-    <AuthButton />
-  </div>
+  <BrowserRouter>
+    <Switch>
+      <Route exact path='/'>
+        <StyledLanding />
+      </Route>
+      <Route path='/dashboard' />
+    </Switch>
+  </BrowserRouter>
 )

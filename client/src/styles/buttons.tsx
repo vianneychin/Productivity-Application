@@ -9,10 +9,10 @@ import email from '../assets/icons/auth/email.svg'
 
 const StyledButton = styled(Button)`
   && {
-    margin-left: 30px;
     background-color: rgb(245, 245, 245);
-    color: rgb(30, 30, 30);
+    color: rgb(45, 45, 45);
     text-transform: none;
+    width: 240.25px;
     span:nth-of-type(1) {
       justify-content: normal;
       font-weight: 500;
@@ -23,38 +23,19 @@ const StyledButton = styled(Button)`
       width: 20px;
       margin-right: 15px;
       margin-left: 15px;
-      /* visibility: hidden; */
     }
   }
 `
 
-export const AuthButton = () => (
-  <div style={{ display: 'flex', flexDirection: 'column' }}>
-    <StyledButton variant='contained'>
-      <img src={gmail} />
-      login with Google
-    </StyledButton>
-    <br />
-    <StyledButton variant='contained'>
-      <img src={linkedin} />
-      login with LinkedIn
-    </StyledButton>
-    <br />
-    <StyledButton variant='contained'>
-      <img src={github} />
-      login with Github
-    </StyledButton>
-    <br />
-    <StyledButton variant='contained'>
-      <img src={email} />
-      login with Email
-    </StyledButton>
-  </div>
-)
+type AuthButtonTypes = {
+  icon: string
+  alt: string
+  authProvider: string
+}
 
-export const Auth = (props: any) => (
+export const AuthButton = (props: AuthButtonTypes) => (
   <StyledButton variant='contained'>
-    <img src={props.image} alt={props.alt} />
-    Login with Google
+    <img src={props.icon} alt={props.alt} />
+    Login with {props.authProvider}
   </StyledButton>
 )

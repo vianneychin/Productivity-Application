@@ -29,9 +29,6 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     width: 100%;
   }
-  a, a:visited {
-    color: black;
-  }
   button: hover {
     cursor: pointer;
   }
