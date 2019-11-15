@@ -14,10 +14,13 @@ type StyleProps = {
 }
 
 export const Landing = ({ className }: StyleProps) => {
-  const [modalClosed, modalOpen] = useState(false)
+  const [isModal, setIsModal] = useState(false)
+  const handleOpenModal = () => setIsModal(true)
+  const handleClose = () => setIsModal(false)
+
   return (
     <>
-      <StyledModal isOpen={true} />
+      <StyledModal isOpen={isModal} onClose={handleClose} />
       <div className={className}>
         <div />
         <div>
@@ -36,7 +39,9 @@ export const Landing = ({ className }: StyleProps) => {
             <AuthButton authProvider='Email' icon={email} alt='email-icon' />
           </div>
           <p>
-            <a href='#'>Don't have an account? Sign up</a>
+            <a onClick={handleOpenModal} href='#'>
+              Don't have an account? Sign up
+            </a>
           </p>
         </div>
       </div>

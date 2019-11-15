@@ -2,32 +2,100 @@ import React from 'react'
 import { createPortal } from 'react-dom'
 import styled from 'styled-components'
 import Modal from '@material-ui/core/Modal'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import { getThemeProps } from '@material-ui/styles'
 
 const modal = document.getElementById('modal') as HTMLElement
 
 type CustomModalProps = {
   isOpen: boolean
+  onClose: () => void | undefined
   className?: string
+  props?: any
 }
 
-const CustomModal = ({ isOpen, className }: CustomModalProps) =>
+const CustomModal = ({ isOpen, className, onClose }: CustomModalProps) =>
   createPortal(
-    <Modal
-      aria-labelledby='simple-modal-title'
-      aria-describedby='simple-modal-description'
-      open={isOpen}
-    >
-      <div className={className}>Hello world</div>
+    <Modal open={isOpen} onClose={onClose}>
+      <div className={className}>
+        <form>
+          <TextField
+            variant='outlined'
+            margin='normal'
+            required
+            fullWidth
+            id='email'
+            label='Email Address'
+            name='email'
+            autoComplete='email'
+            autoFocus
+          />
+          <TextField
+            variant='outlined'
+            margin='normal'
+            required
+            fullWidth
+            name='password'
+            label='Password'
+            type='password'
+            id='password'
+            autoComplete='current-password'
+          />
+          <TextField
+            variant='outlined'
+            margin='normal'
+            required
+            fullWidth
+            name='verify-password'
+            label='Verify Password'
+            type='password'
+            id='verify-password'
+            autoComplete='current-password'
+          />
+          <StyledButton type='submit' fullWidth variant='contained'>
+            Register
+          </StyledButton>
+        </form>
+      </div>
     </Modal>,
     modal
   )
 
+const StyledButton = styled(Button)`
+  && {
+    background-color: #ff7e30;
+    color: rgb(240, 240, 240);
+    align-self: flex-end;
+    justify-self: flex-end;
+    position: relative;
+    top: 15%;
+    > span {
+      font-weight: bold;
+      text-transform: none;
+    }
+  }
+`
+
 export const StyledModal = styled(CustomModal)`
   position: absolute;
-  width: 300px;
-  height: 300px;
+  min-width: 385.5px;
+  min-height: 344.49px;
+  width: 50%;
+  height: 40%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  padding: 4%;
+  background-color: rgb(240, 240, 240);
+  outline: 0;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 0.5rem;
+  > form {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 `
