@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { AuthButton } from '../../styles/buttons'
+import { StyledModal } from './modal'
 
 import gmail from '../../assets/icons/auth/gmail.svg'
 import linkedin from '../../assets/icons/auth/linkedin.svg'
@@ -8,26 +9,40 @@ import github from '../../assets/icons/auth/github.svg'
 import email from '../../assets/icons/auth/email.svg'
 import lock from '../../assets/icons/auth/lock.svg'
 
-export const Landing = ({ className }: any) => (
-  <div className={className}>
-    <div />
-    <div>
-      <div>
-        <img src={lock} alt='lock' />
-        <h1>Sign In</h1>
+type StyleProps = {
+  className?: string
+}
+
+export const Landing = ({ className }: StyleProps) => {
+  const [modalClosed, modalOpen] = useState(false)
+  return (
+    <>
+      <StyledModal isOpen={true} />
+      <div className={className}>
+        <div />
+        <div>
+          <div>
+            <img src={lock} alt='lock' />
+            <h1>Sign In</h1>
+          </div>
+          <div>
+            <AuthButton authProvider='Google' icon={gmail} alt='google-icon' />
+            <AuthButton
+              authProvider='LinkedIn'
+              icon={linkedin}
+              alt='linkedin-icon'
+            />
+            <AuthButton authProvider='GitHub' icon={github} alt='github-icon' />
+            <AuthButton authProvider='Email' icon={email} alt='email-icon' />
+          </div>
+          <p>
+            <a href='#'>Don't have an account? Sign up</a>
+          </p>
+        </div>
       </div>
-      <div>
-        <AuthButton authProvider='Google' icon={gmail} alt='google-icon' />
-        <AuthButton authProvider='LinkedIn' icon={linkedin} alt='google-icon' />
-        <AuthButton authProvider='GitHub' icon={github} alt='google-icon' />
-        <AuthButton authProvider='Email' icon={email} alt='google-icon' />
-      </div>
-      <p>
-        <a href='#'>Don't have an account? Sign up</a>
-      </p>
-    </div>
-  </div>
-)
+    </>
+  )
+}
 
 export const StyledLanding = styled(Landing)`
   height: 100%;
@@ -69,6 +84,9 @@ export const StyledLanding = styled(Landing)`
       text-align: center;
       > a {
         color: rgb(60, 60, 222);
+        :hover {
+          text-decoration: underline;
+        }
       }
     }
   }

@@ -2,11 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button'
 
-import gmail from '../assets/icons/auth/gmail.svg'
-import linkedin from '../assets/icons/auth/linkedin.svg'
-import github from '../assets/icons/auth/github.svg'
-import email from '../assets/icons/auth/email.svg'
-
 const StyledButton = styled(Button)`
   && {
     background-color: rgb(245, 245, 245);
