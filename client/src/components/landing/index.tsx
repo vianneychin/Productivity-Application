@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { AuthButton } from '../../styles/authButton'
 
 import { RegisterModal } from './registerModal'
-import { StyledModal as LoginModal } from './loginModal'
+import { LoginModal } from './loginModal'
 
 import gmail from '../../assets/icons/auth/gmail.svg'
 import linkedin from '../../assets/icons/auth/linkedin.svg'

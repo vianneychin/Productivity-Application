@@ -3,14 +3,12 @@ import { createPortal } from 'react-dom'
 import styled from 'styled-components'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-
 import { StyledModal } from '../../styles/modals'
-
 import { CustomModalProps } from '../../types'
 
 const modal = document.getElementById('register-modal') as HTMLElement
 
-export const RegisterModal = ({ className, open, onClose }: CustomModalProps) =>
+export const RegisterModal = ({ open, onClose }: CustomModalProps) =>
   createPortal(
     <StyledModal open={open} onClose={onClose}>
       <TextField
@@ -52,17 +50,6 @@ export const RegisterModal = ({ className, open, onClose }: CustomModalProps) =>
     </StyledModal>,
     modal
   )
-
-// export const RegisterModal = ({
-//   isOpen,
-//   className,
-//   onClose
-// }: CustomModalProps) =>
-//   createPortal(
-//     <Modal open={isOpen} onClose={onClose}>
-//     </Modal>,
-//     modal
-//   )
 
 const StyledButton = styled(Button)`
   && {
