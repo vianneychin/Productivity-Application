@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { AuthButton } from '../../styles/buttons'
-import { StyledModal } from './modal'
+
+import { StyledModal as RegisterModal } from './registerModal'
+import { LoginModal } from './loginModal'
 
 import gmail from '../../assets/icons/auth/gmail.svg'
 import linkedin from '../../assets/icons/auth/linkedin.svg'
@@ -14,13 +16,21 @@ type StyleProps = {
 }
 
 export const Landing = ({ className }: StyleProps) => {
-  const [isModal, setIsModal] = useState(false)
-  const handleOpenModal = () => setIsModal(true)
-  const handleClose = () => setIsModal(false)
+  const [isRegisterModalOpen, setRegisterModal] = useState(false)
+  const [isLoginModalOpen, setLoginModal] = useState(false)
+
+  const handleRegisterModalOpen = () => setRegisterModal(true)
+  const handleRegisterModalClose = () => setRegisterModal(false)
+  const handleLoginModalOpen = () => setLoginModal(true)
+  const handleLoginModalClose = () => setLoginModal(false)
 
   return (
     <>
-      <StyledModal isOpen={isModal} onClose={handleClose} />
+      <RegisterModal
+        isOpen={isRegisterModalOpen}
+        onClose={handleRegisterModalClose}
+      />
+      <LoginModal isOpen={isLoginModalOpen} onClose={handleLoginModalClose} />
       <div className={className}>
         <div />
         <div>
@@ -36,10 +46,12 @@ export const Landing = ({ className }: StyleProps) => {
               alt='linkedin-icon'
             />
             <AuthButton authProvider='GitHub' icon={github} alt='github-icon' />
-            <AuthButton authProvider='Email' icon={email} alt='email-icon' />
+            <span onClick={handleLoginModalOpen}>
+              <AuthButton authProvider='Email' icon={email} alt='email-icon' />
+            </span>
           </div>
           <p>
-            <a onClick={handleOpenModal} href='#'>
+            <a onClick={handleRegisterModalOpen} href='#'>
               Don't have an account? Sign up
             </a>
           </p>

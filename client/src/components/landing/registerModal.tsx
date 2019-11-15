@@ -4,15 +4,13 @@ import styled from 'styled-components'
 import Modal from '@material-ui/core/Modal'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import { getThemeProps } from '@material-ui/styles'
 
-const modal = document.getElementById('modal') as HTMLElement
+const modal = document.getElementById('register-modal') as HTMLElement
 
-type CustomModalProps = {
+export type CustomModalProps = {
   isOpen: boolean
   onClose: () => void | undefined
   className?: string
-  props?: any
 }
 
 const CustomModal = ({ isOpen, className, onClose }: CustomModalProps) =>

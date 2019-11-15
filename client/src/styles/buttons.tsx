@@ -26,6 +26,7 @@ type AuthButtonTypes = {
   icon: string
   alt: string
   authProvider: string
+  onClick?: () => void
 }
 
 export const AuthButton = (props: AuthButtonTypes) => (
