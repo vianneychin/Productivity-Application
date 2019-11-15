@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { AuthButton } from '../../styles/buttons'
+import { AuthButton } from '../../styles/authButton'
 
-import { StyledModal as RegisterModal } from './registerModal'
-import { LoginModal } from './loginModal'
+import { RegisterModal } from './registerModal'
+import { StyledModal as LoginModal } from './loginModal'
 
 import gmail from '../../assets/icons/auth/gmail.svg'
 import linkedin from '../../assets/icons/auth/linkedin.svg'
@@ -17,7 +17,7 @@ type StyleProps = {
 
 export const Landing = ({ className }: StyleProps) => {
   const [isRegisterModalOpen, setRegisterModal] = useState(false)
-  const [isLoginModalOpen, setLoginModal] = useState(false)
+  const [isLoginModalOpen, setLoginModal] = useState(true)
 
   const handleRegisterModalOpen = () => setRegisterModal(true)
   const handleRegisterModalClose = () => setRegisterModal(false)
@@ -27,10 +27,10 @@ export const Landing = ({ className }: StyleProps) => {
   return (
     <>
       <RegisterModal
-        isOpen={isRegisterModalOpen}
+        open={isRegisterModalOpen}
         onClose={handleRegisterModalClose}
       />
-      <LoginModal isOpen={isLoginModalOpen} onClose={handleLoginModalClose} />
+      <LoginModal open={isLoginModalOpen} onClose={handleLoginModalClose} />
       <div className={className}>
         <div />
         <div>
