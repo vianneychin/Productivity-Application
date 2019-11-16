@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import TextField from '@material-ui/core/TextField'
 import { StyledModal } from '../../styles/modals'
 import { CustomModalProps } from '../../types'
+import { StyledButton as LoginButton } from '../../styles/registerAndLoginButton'
 
 const modal = document.getElementById('login-modal') as HTMLElement
 
@@ -31,6 +32,9 @@ export const LoginModal = ({ open, onClose }: CustomModalProps) =>
         id='password'
         autoComplete='current-password'
       />
+      <LoginButton type='submit' fullWidth variant='contained'>
+        Login
+      </LoginButton>
     </StyledModal>,
     modal
   )

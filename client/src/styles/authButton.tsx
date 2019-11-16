@@ -1,6 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from '@material-ui/core/Button'
+import { AuthButtonTypes } from '../types'
+
+export const AuthButton = (props: AuthButtonTypes) => (
+  <StyledButton variant='contained'>
+    <img src={props.icon} alt={props.alt} />
+    Login with {props.authProvider}
+  </StyledButton>
+)
 
 const StyledButton = styled(Button)`
   && {
@@ -21,17 +29,3 @@ const StyledButton = styled(Button)`
     }
   }
 `
-
-type AuthButtonTypes = {
-  icon: string
-  alt: string
-  authProvider: string
-  onClick?: () => void
-}
-
-export const AuthButton = (props: AuthButtonTypes) => (
-  <StyledButton variant='contained'>
-    <img src={props.icon} alt={props.alt} />
-    Login with {props.authProvider}
-  </StyledButton>
-)

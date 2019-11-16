@@ -4,3 +4,10 @@ export type CustomModalProps = {
   children?: React.ReactNode
   className?: string
 }
+
+export type AuthButtonTypes = {
+  icon: string
+  alt: string
+  authProvider: string
+  onClick?: () => void
+}

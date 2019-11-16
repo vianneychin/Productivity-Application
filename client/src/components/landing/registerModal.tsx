@@ -1,10 +1,9 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
-import styled from 'styled-components'
 import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
 import { StyledModal } from '../../styles/modals'
 import { CustomModalProps } from '../../types'
+import { StyledButton as RegisterButton } from '../../styles/registerAndLoginButton'
 
 const modal = document.getElementById('register-modal') as HTMLElement
 
@@ -44,24 +43,9 @@ export const RegisterModal = ({ open, onClose }: CustomModalProps) =>
         id='verify-password'
         autoComplete='current-password'
       />
-      <StyledButton type='submit' fullWidth variant='contained'>
+      <RegisterButton type='submit' fullWidth variant='contained'>
         Register
-      </StyledButton>
+      </RegisterButton>
     </StyledModal>,
     modal
   )
-
-const StyledButton = styled(Button)`
-  && {
-    background-color: #ff7e30;
-    color: rgb(240, 240, 240);
-    align-self: flex-end;
-    justify-self: flex-end;
-    position: relative;
-    top: 15%;
-    > span {
-      font-weight: bold;
-      text-transform: none;
-    }
-  }
-`
