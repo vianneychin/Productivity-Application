@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { AuthButton } from '../../styles/authButton'
+import { AuthButton } from '../../styles/AuthButton'
 
-import { RegisterModal } from './registerModal'
-import { LoginModal } from './loginModal'
+import { RegisterModal } from './RegisterModal'
+import { LoginModal } from './LoginModal'
 
 import gmail from '../../assets/icons/auth/gmail.svg'
 import linkedin from '../../assets/icons/auth/linkedin.svg'

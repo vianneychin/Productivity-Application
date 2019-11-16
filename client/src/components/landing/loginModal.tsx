@@ -1,9 +1,9 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
 import TextField from '@material-ui/core/TextField'
-import { StyledModal } from '../../styles/modals'
+import { StyledModal } from '../../styles/Modals'
 import { CustomModalProps } from '../../types'
-import { StyledButton as LoginButton } from '../../styles/registerAndLoginButton'
+import { StyledButton as LoginButton } from '../../styles/RegisterAndLoginButton'
 
 const modal = document.getElementById('login-modal') as HTMLElement
 
