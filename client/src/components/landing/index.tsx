@@ -51,9 +51,9 @@ export const Landing = ({ className }: StyleProps) => {
             </span>
           </div>
           <p>
-            <a onClick={handleRegisterModalOpen} href='#'>
+            <span onClick={handleRegisterModalOpen}>
               Don't have an account? Sign up
-            </a>
+            </span>
           </p>
         </div>
       </div>
@@ -99,7 +99,7 @@ export const StyledLanding = styled(Landing)`
     }
     > p {
       text-align: center;
-      > a {
+      > span {
         color: rgb(60, 60, 222);
         :hover {
           text-decoration: underline;
