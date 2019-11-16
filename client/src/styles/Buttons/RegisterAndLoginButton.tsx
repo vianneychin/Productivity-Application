@@ -3,8 +3,8 @@ import Button from '@material-ui/core/Button'
 
 export const StyledButton = styled(Button)`
   && {
-    background-color: #ff7e30;
-    color: rgb(240, 240, 240);
+    background-color: ${props => props.theme.colors.channel_orange};
+    color: ${props => props.theme.colors.soft_white};
     align-self: flex-end;
     justify-self: flex-end;
     position: relative;

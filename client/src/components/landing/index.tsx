@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { AuthButton } from '../../styles/AuthButton'
-
+import { AuthButton } from '../../styles/Buttons/AuthButton'
 import { RegisterModal } from './RegisterModal'
 import { LoginModal } from './LoginModal'
-
 import gmail from '../../assets/icons/auth/gmail.svg'
 import linkedin from '../../assets/icons/auth/linkedin.svg'
 import github from '../../assets/icons/auth/github.svg'
@@ -74,7 +72,7 @@ export const StyledLanding = styled(Landing)`
     background-position: center;
   }
   > div:nth-of-type(2) {
-    background-color: #ff7e30;
+    background-color: ${props => props.theme.colors.channel_orange};
     width: 50%;
     height: 100%;
     > div:nth-of-type(1) {
@@ -87,7 +85,7 @@ export const StyledLanding = styled(Landing)`
       h1 {
         font-size: 24px;
         font-weight: 400;
-        color: rgb(240, 240, 240);
+        color: ${props => props.theme.colors.soft_white};
       }
     }
     > div:nth-of-type(2) {
